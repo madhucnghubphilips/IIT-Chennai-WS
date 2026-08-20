@@ -1,0 +1,13 @@
+services:
+  app:
+    extends:
+      file: backend/config.yml
+      service: app-port
+    build: .
+    volumes:
+      - ollama-models:/root/.ollama
+      - ./certs:/opt/local-certs:ro
+    restart: unless-stopped
+
+volumes:
+  ollama-models:

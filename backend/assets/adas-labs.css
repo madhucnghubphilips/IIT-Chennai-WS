@@ -1,0 +1,176 @@
+.adas-panel,
+.adas-artifact-row {
+  display: grid;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--line));
+  border-radius: 13px;
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+}
+
+.adas-artifact-row {
+  border-radius: 8px;
+  background: var(--input-bg);
+}
+
+.adas-panel h3,
+.adas-panel p { margin: 0; }
+
+.adas-panel h3 { font-size: 0.95rem; color: var(--text); }
+.adas-panel p { font-size: 0.8rem; line-height: 1.45; color: var(--text-muted); }
+
+.adas-editor-wrap,
+.adas-scene {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  background: #0b1220;
+}
+
+.adas-editor-wrap canvas,
+.adas-scene img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.adas-toolbar,
+.adas-upload-row,
+.adas-toggle-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.adas-btn,
+.adas-download {
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 11px;
+  border: 1px solid color-mix(in srgb, var(--accent) 48%, var(--line));
+  border-radius: 9px;
+  color: var(--text);
+  background: var(--input-bg);
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.adas-btn.primary {
+  color: #fff;
+  background: linear-gradient(145deg, var(--accent), var(--accent-strong));
+}
+
+.adas-btn:disabled { opacity: 0.55; cursor: wait; }
+.adas-file { max-width: 100%; color: var(--text-muted); font-size: 0.76rem; }
+
+.adas-counter {
+  margin-left: auto;
+  padding: 6px 9px;
+  border-radius: 999px;
+  color: var(--text);
+  background: color-mix(in srgb, var(--accent) 14%, var(--surface));
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+.adas-status {
+  min-height: 1.2em;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.adas-status.pass { color: #22c55e; }
+.adas-status.loading { color: #f59e0b; animation: template-pulse 1.1s ease-in-out infinite; }
+.adas-status.fail { color: #f59e0b; }
+.adas-status.error { color: #ef4444; }
+
+.adas-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px;
+}
+
+.adas-metric {
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: var(--input-bg);
+}
+
+.adas-metric span { display: block; color: var(--text-faint); font-size: 0.68rem; }
+.adas-metric strong { display: block; margin-top: 2px; color: var(--text); font-size: 0.84rem; }
+
+.adas-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.adas-file-box,
+.adas-finding {
+  display: grid;
+  gap: 5px;
+  padding: 9px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: var(--input-bg);
+}
+
+.adas-file-box label,
+.adas-finding label {
+  color: var(--text);
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.adas-overlay {
+  position: absolute;
+  display: none;
+  border: 3px solid;
+  border-radius: 5px;
+  pointer-events: none;
+}
+
+.adas-scene.show-camera .adas-overlay.camera,
+.adas-scene.show-radar .adas-overlay.radar { display: block; }
+.adas-overlay.camera { border-color: #ef4444; color: #ef4444; }
+.adas-overlay.radar { border-color: #22d3ee; color: #22d3ee; }
+
+.adas-overlay::after {
+  content: attr(data-label);
+  position: absolute;
+  left: -3px;
+  top: -24px;
+  padding: 2px 5px;
+  border-radius: 4px;
+  color: #fff;
+  background: currentColor;
+  font-size: 0.64rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.adas-findings {
+  display: grid;
+  gap: 7px;
+}
+
+.adas-finding label {
+  display: flex;
+  gap: 7px;
+  align-items: flex-start;
+  font-weight: 500;
+}
+
+@media (max-width: 760px) {
+  .adas-form-grid,
+  .adas-metrics { grid-template-columns: 1fr; }
+  .adas-counter { margin-left: 0; }
+}

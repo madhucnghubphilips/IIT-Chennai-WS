@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 220" role="img" aria-label="STOP sign">
+  <rect x="74" y="132" width="12" height="88" rx="3" fill="#a6adb5"/>
+  <rect x="77" y="132" width="5" height="88" fill="#d6dbe0"/>
+  <polygon points="48,4 112,4 156,48 156,112 112,156 48,156 4,112 4,48"
+           fill="#f7f7f7"/>
+  <polygon points="51,11 109,11 149,51 149,109 109,149 51,149 11,109 11,51"
+           fill="#c91522"/>
+  <text x="80" y="99" text-anchor="middle" fill="#fff" font-family="Arial, Helvetica, sans-serif"
+        font-size="43" font-weight="800" letter-spacing="-1">STOP</text>
+</svg>

@@ -1,0 +1,12 @@
+x-app-port: &app-port 20002
+x-container-name: &container-name LLMWorkshop_Labs
+
+services:
+  app-port:
+    container_name: *container-name
+    environment:
+      APP_PORT: *app-port
+    ports:
+      - target: *app-port
+        published: *app-port
+        protocol: tcp
